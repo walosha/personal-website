@@ -24,7 +24,6 @@ function onScrollToTop() {
   window.scroll({ top: 0, left: 0, behavior: "smooth" });
 }
 document.querySelector("body").onscroll = function () {
-  console.log("I am scrolling");
   if (window.scrollY > 86)
     //if scroll is 150px from top
     scrollToTop.style.display = "flex";
