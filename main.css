@@ -6,6 +6,8 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  min-width: auto;
 }
 .dark-mode {
   background-color: black;
@@ -16,11 +18,12 @@ body {
   font-size: 8px;
   font-family: serif Arial, Helvetica;
   padding: 0;
-  line-height: 45px;
+  line-height: 1.7;
   margin: 0;
   background-color: #e3f6f5;
   color: #272343;
   border: 9px solid #ffd803;
+  min-width: auto;
 }
 
 .navigation {
@@ -302,4 +305,25 @@ input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
+}
+
+.scrollToTop {
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background-color: white;
+  position: fixed;
+  cursor: pointer;
+  bottom: 5%;
+  right: 5%;
+  z-index: 99;
+  box-shadow: 0 5px 8px -1px rgba(29, 28, 28, 0.6), 0 4px 8px -1px #0707070f;
+}
+
+.arrow {
+  font-size: 4rem;
+  font-weight: bolder;
+  color: #000;
 }

@@ -1,12 +1,10 @@
+const links = document.querySelectorAll(".nav .nav-link");
+const input = document.querySelector("input");
+const scrollToTop = document.querySelector(".scrollToTop");
+
 function toggleMode() {
   var element = document.body;
   element.classList.toggle("dark-mode");
-}
-
-const links = document.querySelectorAll(".nav .nav-link");
-
-for (const link of links) {
-  link.addEventListener("click", smoothScroll);
 }
 
 function smoothScroll(e) {
@@ -22,5 +20,20 @@ function smoothScroll(e) {
   }
 }
 
-//Handler for Night mode
-document.querySelector("input").addEventListener("change", toggleMode);
+function onScrollToTop() {
+  window.scroll({ top: 0, left: 0, behavior: "smooth" });
+}
+document.querySelector("body").onscroll = function () {
+  console.log("I am scrolling");
+  if (window.scrollY > 86)
+    //if scroll is 150px from top
+    scrollToTop.style.display = "flex";
+  //if they scroll down, show
+  else scrollToTop.style.display = "none"; //if they scroll up, hide
+};
+
+for (const link of links) {
+  link.addEventListener("click", smoothScroll);
+}
+input.addEventListener("change", toggleMode);
+scrollToTop.addEventListener("click", onScrollToTop);
