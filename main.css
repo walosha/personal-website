@@ -1,15 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
   scroll-behavior: smooth;
   min-width: auto;
   font-size: 62.5%;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 .dark-mode {
   background-color: black;
@@ -17,11 +21,8 @@ html {
 }
 
 body {
-  font-size: 8px;
-  font-family: "serif Arial Helvetica";
-  padding: 0;
+  font-family: "sans-serif Arial Helvetica";
   line-height: 1.7;
-  margin: 0;
   background-color: #e3f6f5;
   color: #272343;
   border: 9px solid #ffd803;
@@ -33,19 +34,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 6rem;
+  padding: 2rem 2rem;
   height: 10rem;
   width: 100%;
 }
+
+.logo-container {
+  flex: 0 0 40%;
+}
+
 .text-highlight {
   background-color: #ffd803;
   color: #fff;
   padding: 2px 7px;
-}
-
-.logo-container {
-  width: 20rem;
-  height: auto;
 }
 
 .logo {
@@ -80,18 +81,19 @@ body {
 .hide-md {
   display: none;
 }
-@media (max-width: 900px) {
+
+.nav {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 700px) {
   .nav {
     display: none;
   }
   .hide-md {
     display: block;
   }
-}
-
-.nav {
-  flex: 1;
-  padding: 1rem 0 1rem 7rem;
 }
 
 .nav-list {
@@ -111,7 +113,7 @@ body {
   color: inherit;
 }
 .nav-link {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-family: serif;
   font-weight: 700;
 }
@@ -127,25 +129,35 @@ header {
   padding: 3rem 7rem;
 }
 
+@media (max-width: 455px) {
+  header {
+    padding: 3rem 3rem;
+  }
+}
+
 .hero-image-container {
-  height: auto;
   border-radius: 50%;
-  border: 6rem dotted currentColor;
+  border: 4rem dotted currentColor;
 }
 
 .hero-image {
-  height: 100%;
   width: 100%;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
 @media (max-width: 780px) {
   .hero-image-container {
     width: 100%;
-    border: 5rem dotted currentColor;
+    border: 4rem dotted currentColor;
   }
 }
 
+@media (max-width: 500px) {
+  .hero-image-container {
+    width: 100%;
+    border: 1rem dotted currentColor;
+  }
+}
 .social-container {
   padding: 1rem 0.1.7rem;
 }
@@ -169,7 +181,7 @@ header {
 
 .main-text {
   color: inherit;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 @media (max-width: 700px) {
@@ -177,23 +189,45 @@ header {
     font-size: 4rem;
   }
 }
+
+@media (max-width: 500px) {
+  .main-text {
+    font-size: 2rem;
+  }
+}
 .sub-text {
   font-size: 2.8rem;
+}
+
+@media (max-width: 595px) {
+  .sub-text {
+    font-size: 1.8rem;
+  }
 }
 
 .section-container {
   padding: 2rem 3.2rem;
 }
 
-.about-main-text {
-  font-size: 4rem;
+@media (max-width: 325px) {
+  .section-container {
+    padding: 2rem 0.5rem;
+  }
 }
+
+.about-main-text {
+  font-size: 3rem;
+}
+
 .about-sub-text {
   font-size: 2.5rem;
 }
-@media (max-width: 537px) {
+@media (max-width: 837px) {
   .about-sub-text {
     font-size: 1.3rem;
+  }
+  .about-main-text {
+    font-size: 2.3rem;
   }
 }
 
@@ -201,6 +235,16 @@ header {
   text-align: right;
   font-size: 2.5rem;
   padding: 2rem 4.5rem;
+}
+
+@media (max-width: 500px) {
+  .about-main-text-All {
+    font-size: 1.5rem;
+  }
+}
+
+.blog {
+  height: 90vh;
 }
 
 .article-list {
@@ -240,6 +284,12 @@ article-paper:link,
   font-size: 2.3rem;
 }
 
+@media (max-width: 500px) {
+  .paper-text-header {
+    font-size: 2rem;
+  }
+}
+
 .paper-text-excerpts {
   font-size: 1.7rem;
   color: inherit;
@@ -247,7 +297,13 @@ article-paper:link,
 
 .contact-container {
   text-align: center;
-  padding: 1rem 5rem;
+  padding: 1rem 0rem;
+}
+
+@media (max-width: 300px) {
+  .contact-container {
+    padding: 1rem 0rem;
+  }
 }
 
 .contact-box {
@@ -336,7 +392,7 @@ article-paper:link,
 /* END OF  GRID*/
 
 .btn {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   background-color: #4e4c5e;
   color: #fff;
   padding: 0.4rem 4.7rem;
@@ -344,17 +400,34 @@ article-paper:link,
   border-radius: 4px;
 }
 
+@media (max-width: 300px) {
+  .btn {
+    padding: 0.4rem 1.7rem;
+  }
+}
+
 .contact-link {
-  color: #272343;
+  color: currentColor;
   font-size: 2.5rem;
   padding: 1rem 5rem;
   text-decoration: none;
+}
+
+@media (max-width: 300px) {
+  .contact-link {
+    font-size: 2rem;
+  }
 }
 
 .footer-note {
   font-size: 2.5rem;
 }
 
+@media (max-width: 600px) {
+  .footer-note {
+    font-size: 1.3rem;
+  }
+}
 /*Toggle button*/
 
 .switch {
@@ -371,6 +444,10 @@ article-paper:link,
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+input {
+  margin: 3px 3px 3px 4px;
 }
 
 .slider {

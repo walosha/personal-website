@@ -3,7 +3,7 @@ const input = document.querySelector("input");
 const scrollToTop = document.querySelector(".scrollToTop");
 
 function toggleMode() {
-  var element = document.body;
+  var element = document.querySelector("body");
   element.classList.toggle("dark-mode");
 }
 
