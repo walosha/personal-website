@@ -145,19 +145,6 @@ header {
   border-radius: 50%;
 }
 
-@media (max-width: 780px) {
-  .hero-image-container {
-    width: 100%;
-    border: 4rem dotted currentColor;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero-image-container {
-    width: 100%;
-    border: 1rem dotted currentColor;
-  }
-}
 .social-container {
   padding: 1rem 0.1.7rem;
 }
@@ -510,4 +497,24 @@ input:checked + .slider:before {
   font-size: 2.5rem;
   font-weight: bolder;
   color: #000;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 914px) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .order1 {
+    order: 1;
+  }
+  .hero-image-container {
+    width: 77%;
+    border: 2rem dotted currentColor;
+  }
 }
